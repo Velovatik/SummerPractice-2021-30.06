@@ -29,6 +29,15 @@ bool test(int n, int size){
 	bool f1 = CompareMas(mass1, mass2, 5);
 	return(f1);
 }
+
+void runTest(int (*test)(),const std::string& testName)
+{
+  if(test()==1)
+    cout << "Test "<< testName << " - OK" << std::endl;
+  else 
+    cout << "Test "<< testName << " - FAIL" << std::endl;
+}
+
 int main()
 {
 	const int size = 5;
