@@ -1,3 +1,4 @@
+
 #include <iostream>
 using namespace std;
 
@@ -11,6 +12,7 @@ struct Node
 void init(Node* node)
 {
 	node->val = 0;
+	
 	node->next = NULL;
 }
 
@@ -20,13 +22,13 @@ void show(Node* root)
 	Node* cur = root;
 	while (cur->next != NULL)
 	{
-		cout << cur->val << " ";
+		cout << cur->val << "  ";
 		cur = cur->next;
 	}
 	cout << endl;
 }
 
-// Добавления элемента
+// Добавление нового элемента
 void pushNode(Node* root, Node* node)
 {
 	Node* cur = root;

@@ -1,9 +1,11 @@
 #include <iostream>
 #include <cmath>
 #include <fstream>
-
 using namespace std;
-const double g = 9.8;
+
+
+const double g = 9.81;
+
 struct Image
 {
 	int mx;
@@ -33,10 +35,8 @@ void ShowImage(Image* img)
 {
 	for (int i = 0; i < img->my; i++)
 	{
-		for (int j = 0; j < img->mx; j++)
-		{
-			cout << img->points[i * img->mx + j] << " ";
-		}
+		for (int j = 0; j < img->mx; j++) 	cout << img->points[i * img->mx + j] << " ";
+		
 		cout << endl;
 	}
 }
@@ -58,6 +58,7 @@ void SaveToPnmFile(Image* img, string fileName)
 	}
 	out.close();
 }
+
 
 struct Node
 {

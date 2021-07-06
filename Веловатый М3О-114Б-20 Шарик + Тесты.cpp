@@ -1,9 +1,10 @@
 #include <iostream>
 #include <math.h>
 using namespace std;
-const double g = 9.81;
 
- setlocale(LC_ALL, "Russian");
+
+setlocale(LC_ALL, "Russian");
+const double g = 9.81;
 struct Node {
 	double m;
 	double t;
@@ -58,7 +59,7 @@ int testPushNode() {
 	return 0;
 }
 
-int testKordinat() {
+int testKordinats() {
 	double v = 0, hnew = 0, v1=0;
 	Kordinats(0, 10,v1, &v, &hnew);
 	if ((v != 0) || (hnew != 10)) return -1;
@@ -69,6 +70,12 @@ int testKordinat() {
 	return 0;
 }
 
+void runTest(int (*testfunction)(), string testname) {
+	if (testfunction() == 0)
+		cout << "TEST " << testname << " SUCCSESS " << endl;
+	else
+		cout << "TEST " << testname << " TEST FAILED" << endl;
+}
 int show(Node* head) {
 	cout << "масса " << head->m << endl;
 	cout << "время " << head->t << endl;
@@ -81,12 +88,8 @@ int show(Node* head) {
 	show(head->next);
 }
 
-void runTest(int (*testfunction)(), string testname) {
-	if (testfunction() == 0)
-		cout << "TEST " << testname << " COMPLETED SUCCSESSFULLY " << endl;
-	else
-		cout << "TEST " << testname << " FAILD" << endl;
-}
+
+
 
 int main()
 {

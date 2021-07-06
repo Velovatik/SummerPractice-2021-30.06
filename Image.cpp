@@ -8,14 +8,6 @@ struct Image {
 	int* points;
 };
 
-
-void createImage(Image* img, int tmx, int tmy) {
-	img -> mx = tmx;
-	img -> my = tmy;
-	img -> points = new int[tmx * tmy]{ 0 };
-}
-
-
 void showImage(Image* img) {
 	for (int y = 0; y < img->my; y++) {
 		for (int x = 0; x < img->mx; x++) {
@@ -24,6 +16,13 @@ void showImage(Image* img) {
 		cout << endl;
 	}
 }
+
+void createImage(Image* img, int tmx, int tmy) {
+	img -> mx = tmx;
+	img -> my = tmy;
+	img -> points = new int[tmx * tmy]{ 0 };
+}
+
 
 
 void setPointImage(Image* img, int x, int y, int color) {
@@ -48,6 +47,8 @@ void saveToPnmFile(Image* img, string fileName) {
 	}
 	file.close();
 }
+
+
 int main() {
 	Image* img = new Image();
 	createImage(img, 6, 10);
